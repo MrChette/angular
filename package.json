@@ -1,5 +1,28 @@
 {
+  "name": "typescript",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  },
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "vite": "^4.3.8"
-  }
+    "esbuild": "^0.17.19",
+    "nanoid": "^3.3.6",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.23",
+    "rollup": "^3.22.0",
+    "source-map-js": "^1.0.2"
+  },
+  "author": "",
+  "license": "ISC"
 }
