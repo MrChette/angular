@@ -9,12 +9,4 @@ console.log(
     name,hpPoints
 )
 
-
-
-
-
-
-
-
-
 export {};

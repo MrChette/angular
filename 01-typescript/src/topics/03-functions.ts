@@ -44,7 +44,7 @@ const strider: Character = {
 healCharacter(strider, 10);
 healCharacter(strider, 50);
 
-strider.showHp();
+//strider.showHp();
 
 
 export{}
