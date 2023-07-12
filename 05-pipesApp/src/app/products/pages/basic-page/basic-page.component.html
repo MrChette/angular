@@ -1,0 +1,24 @@
+<p-panel [showHeader]="false">
+  <h1>
+    Pipes Basicos
+  </h1>
+  <p>
+    Pipes incluidos en Angular - Usuarlmente en el Common Module
+  </p>
+</p-panel>
+
+<div class="p-grid">
+
+  <div class="p-col-4">
+    <p-card header="uppercase">
+      {{ nameLower | uppercase }}
+    </p-card >
+    <p-card header="lowercase">
+      {{ nameUpper | lowercase}}
+    </p-card>
+    <p-card header="titlecase">
+      {{ fullName | titlecase}}
+    </p-card>
+  </div>
+
+</div>
