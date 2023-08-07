@@ -16,36 +16,12 @@
       "characters": "Bruce Wayne"
     },
     {
-      "id": "dc-superman",
-      "superhero": "Superman",
-      "publisher": "DC Comics",
-      "alter_ego": "Kal-El",
-      "first_appearance": "Action Comics #1",
-      "characters": "Kal-El"
-    },
-    {
       "id": "dc-flash",
       "superhero": "Flash",
       "publisher": "DC Comics",
       "alter_ego": "Jay Garrick",
       "first_appearance": "Flash Comics #1",
       "characters": "Jay Garrick, Barry Allen, Wally West, Bart Allen"
-    },
-    {
-      "id": "dc-green",
-      "superhero": "Green Lantern",
-      "publisher": "DC Comics",
-      "alter_ego": "Alan Scott",
-      "first_appearance": "All-American Comics #16",
-      "characters": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz"
-    },
-    {
-      "id": "dc-arrow",
-      "superhero": "Green Arrow",
-      "publisher": "DC Comics",
-      "alter_ego": "Oliver Queen",
-      "first_appearance": "More Fun Comics #73",
-      "characters": "Oliver Queen"
     },
     {
       "id": "dc-wonder",
@@ -166,6 +142,24 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "uQBqWCm",
+      "superhero": "asd",
+      "publisher": "Marvel Comics",
+      "alter_ego": "asd",
+      "first_appearance": "aasd",
+      "characters": "asd",
+      "alt_img": "asd"
+    },
+    {
+      "id": "A1_XEyV",
+      "superhero": "aaaaa",
+      "publisher": "Marvel Comics",
+      "alter_ego": "aa",
+      "first_appearance": "aa",
+      "characters": "aa",
+      "alt_img": "https://e0.pxfuel.com/wallpapers/916/685/desktop-wallpaper-morgana-league-of-legends-violet-hair-video-game-league-of-legends-characters-lol-league-of-legends-league-of-legends-violet-arcane.jpg"
     }
   ]
 }
