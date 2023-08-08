@@ -34,7 +34,7 @@ export class AuthService {
 
     const token = localStorage.getItem('token');
 
-    return this.http.get<User>(`${ this.baseUrl }/user/1`)
+    return this.http.get<User>(`${ this.baseUrl }/users/1`)
       .pipe(
         tap( user => this.user = user ),
         map ( user => !!user ),
