@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col">
 
-        <form autocomplete="off">
+        <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
 
             <!-- Campo de producto -->
             <div class="mb-3 row">
@@ -13,11 +13,12 @@
 
                     <input type="text"
                            class="form-control"
+                           formControlName="name"
                            placeholder="Nombre del producto">
 
-                    <span class="form-text text-danger">
-                        <!-- Debe de ser de 3 letras -->
-                        error message
+                          <!--!CONTROLAR ERRORES y OBTENER ERROR -->
+                    <span *ngIf="isValidField('name')" class="form-text text-danger">
+                        {{ getFieldError('name')}}
                     </span>
                 </div>
             </div>
@@ -28,8 +29,10 @@
                 <div class="col-sm-9">
                     <input type="number"
                            class="form-control"
+                           formControlName="price"
                            placeholder="Precio del producto">
-                    <span class="form-text text-danger">
+
+                    <span *ngIf="isValidField('price')" class="form-text text-danger">
                         El precio debe de ser 0 o mayor
                     </span>
                 </div>
@@ -41,9 +44,10 @@
                 <div class="col-sm-9">
                     <input type="number"
                            class="form-control"
+                           formControlName="inStorage"
                            placeholder="Existencias del producto">
 
-                    <span class="form-text text-danger">
+                    <span *ngIf="isValidField('inStorage')" class="form-text text-danger">
                          Las existencias deben de ser 0 o mayor
                     </span>
                 </div>
@@ -53,6 +57,7 @@
             <div class="row">
                 <div class="col">
                     <button type="submit"
+
                             class="btn btn-primary float-end">
                         Guardar
                     </button>
@@ -73,21 +78,27 @@
     <div class="col">
 
         <span>Valid</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.valid | json }}</pre>
 
         <span>Pristine</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.pristine | json }}</pre>
 
         <span>Touched</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.touched  | json }}</pre>
 
         <span>Value</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.value | json }}</pre>
 
         <span>Precio</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.controls['price'].value | json }}</pre>
+
+        <span>Precio - Errors </span>
+        <pre>{{ myForm.controls['price'].errors | json }}</pre>
 
         <span>Producto</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.controls['name'].value | json }}</pre>
+
+        <span>Producto</span>
+        <pre>{{ myForm.controls['name'].errors | json }}</pre>
     </div>
 </div>
