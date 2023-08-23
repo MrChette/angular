@@ -3,6 +3,7 @@
 
 <form [formGroup]="myForm">
 
+  <!--Region-->
   <div class="row mb-3">
     <div class="col">
       <label class="form-label">Continente:</label>
@@ -12,6 +13,29 @@
       </select>
     </div>
   </div>
+
+  <!--Countries-->
+  <div class="row mb-3" *ngIf="countriesByRegion.length > 0">
+    <div class="col">
+      <label class="form-label">Pais:</label>
+      <select  formControlName="country" class="form-control">
+        <option value="">--Seleccione un Pais--</option>
+        <option *ngFor="let country of countriesByRegion" [value]="country.cca3">{{ country.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!--Borders-->
+  <div class="row mb-3" *ngIf="borders.length > 0">
+    <div class="col">
+      <label class="form-label">Fronteras:</label>
+      <select  formControlName="border" class="form-control">
+        <option value="">--Seleccione la frontera--</option>
+        <option *ngFor="let country of borders" [value]="country.cca3">{{ country.name }}</option>
+      </select>
+    </div>
+  </div>
+
 
 </form>
 
