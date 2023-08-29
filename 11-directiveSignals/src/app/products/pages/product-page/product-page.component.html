@@ -4,7 +4,7 @@
 
 <form [formGroup]="myForm">
 
-  <div class="row g-3 align-items-center mb-3">
+  <div class="row g-3 a lign-items-center mb-3">
 
     <div class="col-auto">
       <label>Nombre: </label>
@@ -15,7 +15,11 @@
     </div>
 
     <div class="col-auto">
-      <span>Algo de informacion</span>
+      <!-- Enlaza el span con el custom-label-directive.ts -->
+      <span customLabel
+            [color]="color"
+            [errors]=" myForm.get('name')?.errors"
+          ></span>
     </div>
 
   </div>
