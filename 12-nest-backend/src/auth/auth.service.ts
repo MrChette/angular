@@ -10,6 +10,8 @@ import { UpdateAuthDto } from './dto/update-auth.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './interfaces/jwt.paypload';
+import { LoginResponse } from './interfaces/login-response';
+import { RegisterDto } from './dto/register.dto';
 
 
 @Injectable()
@@ -49,7 +51,18 @@ export class AuthService {
     }
   }
 
-  async login( loginDto: LoginDto){
+  async register( registerDto: RegisterDto ): Promise<LoginResponse>{
+    
+    const user = await this.create(registerDto);
+
+    return{
+      user: user,
+      token: this.getJwt({ id: user._id })
+    }
+
+  }
+
+  async login( loginDto: LoginDto):Promise<LoginResponse>{
 
     const { email, password } = loginDto;
 
@@ -71,16 +84,20 @@ export class AuthService {
       token: this.getJwt({ id: user.id }),
     }
 
-
-    console.log(loginDto);
   }
 
-  findAll() {
-    return `This action returns all auth`;
+  findAll(): Promise<User[]> {
+    return this.userModel.find();
   }
 
   findOne(id: number) {
     return `This action returns a #${id} auth`;
+  }
+
+  async findUserById( id: string) {
+    const user = await this.userModel.findById(id);
+    const { password, ...rest} = user.toJSON();
+    return rest
   }
 
   update(id: number, updateAuthDto: UpdateAuthDto) {
